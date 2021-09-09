@@ -1,19 +1,36 @@
-//adding things functions
-function aaravID(id, name) {
-  document.getElementById(id).innerHTML = name;
+function AV(what) {
+	var aarav = document.querySelector(what);
+	aarav.html = function (inside) {
+		aarav.innerHTML = inside;
+	};
+	aarav.txt = function (inside) {
+		aarav.textContent = inside;
+	};
+	aarav.hide = function () {
+		aarav.style.opacity = "0";
+	};
+	aarav.show = function () {
+		aarav.style.opacity = "1";
+	};
+	aarav.event = function (event, call) {
+		aarav.addEventListener(event, call);
+	};
+	aarav.attr = function (name, val) {
+		aarav.setAttribute(name, val);
+	};
+	aarav.inside = function (child) {
+		parent.appendChild(child);
+	};
+	aarav.rid = function () {
+		aarav.remove();
+	};
+	aarav.css = aarav.style;
+	return aarav;
 }
-function aaravIDadd(id, name) {
-  document.getElementById(id).innerHTML += name;
+function forTimeLoopAV(much, milsec, fun) {
+	for (var count = 0; count < much; count++) {
+		setInterval(fun, milsec);
+	}
 }
-function aaravCL(id, name) {
-  document.getElementById(id).innerHTML = name;
-}
-function aaravCLadd(id, name) {
-  document.getElementById(id).innerHTML += name;
-}
-function aaravNA(id, name) {
-  document.getElementsByName(id).innerHTML = name;
-}
-function aaravNAadd(id, name) {
-  document.getElementsByName(id).innerHTML += name;
-}
+AV("#hi").html("<h3>hi blah</h3>");
+AV("#hi").attr("class", "f");
