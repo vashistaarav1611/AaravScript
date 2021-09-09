@@ -32,5 +32,3 @@ function forTimeLoopAV(much, milsec, fun) {
 		setInterval(fun, milsec);
 	}
 }
-AV("#hi").html("<h3>hi blah</h3>");
-AV("#hi").attr("class", "f");
